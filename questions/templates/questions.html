@@ -1,0 +1,33 @@
+﻿<div class="row">
+    
+    <div ng-hide="vm.isSubmitted">
+        <h3>    quiz:  </h3>
+        <div class="well well-sm" ng-repeat="question in vm.questions">
+            <div>
+                <p>{{$index + 1}} - {{question.question}}   </p>
+                <div ng-repeat="answer in question.answers">
+                    <input type="radio" name="{{question.id}}" value="{{answer}}"
+                           ng-model="vm.selectedAnswer[$parent.$index] " />
+                    {{answer}}
+                </div>
+            </div>
+        </div>
+        <br>
+      
+        <input type="button" value="submit" ng-disabled="vm.selectedAnswer.length < vm.questions.length" class="btn btn-primary" ng-click="vm.submit()" />
+    </div>
+
+    <div ng-show="vm.isSubmitted">
+
+        <h2> Your Score: {{vm.result}} / {{vm.questions.length}} </h2>
+
+        <br>
+
+        <div>
+            <h2>The correct answers are: </h2>
+            <ol>
+                <li ng-repeat="question in vm.questions "> {{question.correctAnswer}}</li>
+            </ol>
+        </div>
+    </div>
+</div>
