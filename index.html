@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="quizApp">
+<head>
+    <title>quiz application</title>
+	<meta charset="utf-8" />
+    <link href="style/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="style/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container" ng-controller="mainController as vm">
+        <div class="page-header">
+            <h1>Welcome to quiz application</h1>
+         <input type="button" ng-click="vm.logout()" class="btn btn-default" 
+                value="Log out" ng-hide="!isLoggedin" />
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="ng-view"> </div>
+    </div>
+       
+
+        <script src="script/angular/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="script/angular/angular-route.js"></script>
+     
+        <script src="users/controllers/accountController.js"></script>
+        <script src="questions/controllers/questionsController.js"></script>
+        <script src="questions/controllers/questionsController.js"></script>
+   
+
+</body>
+</html>
