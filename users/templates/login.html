@@ -1,0 +1,29 @@
+﻿<div>
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <form class="form-horizontal" novalidate name="loginForm">
+                <div>
+                    <h4>login to acsess the quizApp </h4>
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="text" id="email" class="form-control" placeholder="email"
+                               ng-model="vm.email" required/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="password"
+                               ng-model="vm.password" required/>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-click="vm.login()" ng-disabled="loginForm.$invalid">login</button>
+                    </div>
+                    
+
+                    <div ng-show="vm.failedToLogin" class="text-danger">
+                        Email or password are incorrect.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
